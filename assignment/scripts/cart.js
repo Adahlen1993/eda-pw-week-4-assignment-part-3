@@ -3,8 +3,13 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+const maxItems = 5;
 
 function addItem(item) {
+    if (isFull()){
+        basket.pop;
+        return false;
+    }
 basket.push(item);
 return true;
 }
@@ -13,10 +18,22 @@ console.log('basket contains', basket);
 console.log('Adding item to basket', addItem('olives'));
 console.log('basket contains', basket);
 
+console.log('Adding item to basket', addItem('orange'));
+console.log('basket contains', basket);
+
+console.log('Adding item to basket', addItem('apple'));
+console.log('basket contains', basket);
+
 console.log('adding new item', addItem('cheese'));
 console.log('basket contains', basket);
 
 console.log('adding new item', addItem('peppers'));
+console.log('basket contains', basket);
+
+console.log('Adding item to basket', addItem('pickles'));
+console.log('basket contains', basket);
+
+console.log('Adding item to basket test for fullness', addItem('burger'));
 console.log('basket contains', basket);
 
 function listItems() {
@@ -32,10 +49,18 @@ function empty() {
     while (basket.length > 0) {
         basket.pop();
     }
+    return console.log(basket);
 }
 
-console.log(basket);
+function isFull() {
+    if(basket.length >= maxItems) {
+        return true;
+    } 
+    else {return false;
+}
+}
 
+console.log('testing basket is full',isFull());
 
 
 

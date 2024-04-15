@@ -62,6 +62,15 @@ function isFull() {
 
 console.log('testing basket is full',isFull());
 
+function removeItem(item) {
+    let index = basket.indexOf(item);
+    if (index !== -1) {
+       basket.splice(index, 1);
+       return item;
+    } else {return null;}
+}
+
+console.log(removeItem('orange'))
 
 
 
